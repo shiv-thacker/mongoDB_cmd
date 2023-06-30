@@ -1,0 +1,63 @@
+mongoDB commands:
+
+1) Diff between SQL and MonoDB(Non SQL)
+
+2) MOngoDB uses BSON, both internally & over the network, format is like JSON
+
+3) Difference between BSON & JSON
+
+4) why BSON is used instead of JSON
+
+5) We can use more data types with the help of BSON
+
+6) in mongo db we call "collection" instead of "Table", and we call "Document" instead of "raw", we call "field name" instead of "column name"
+
+7) here "report" : false  has given, that means we can add so many feild as we want.
+
+8) Default no of MongoDB : 27017
+
+9) "show dbs" to see database.
+
+10) "use mongobasic" to create "mongobasic" named database     CREATE
+
+11) db.projectdata.insertOne({name:"ReactJS",type:"Front Ens", videos:80, active:true}) :- here projectdata is collection, insertOne is document,  & these are details, when you run this code , database itself generates primary key.   CREAT
+
+12) db.projectdata.insertMany([{name:"nodejs",type:"backend", videos:40, active: true},{name:"javascript",type:"Front End", videos:150, active:true}]) CREATE
+
+13) "db" to see current database, if it shows "test" then you have to go your datebase with "use databasename". READ
+
+14) "show collections" shows all the collection of database.      READ
+
+15) "db.projectdata.find().pretty()" to show data in collections. .pretty() to see documentation properly.       READ
+
+16) db.collection.find(query,projection) // syntex to READ perticular data              READ
+
+17) db.projectdata.find({name:"nodejs"}) // to see document which has name = nodejs             READ
+
+18) db.projectdata.find({name:"nodejs"},{name:1}) // to see only name and id(default) variable of nodejs         READ
+
+19) db.projectdata.find({name:"nodejs"},{name:0}) // to see all field except of name field               READ
+
+20) db.projectdata.find({name:"nodejs"},{_id:0,name:1}) // to see only name field            READ
+
+21) db.projectdata.find({active:true}) // to see all document which has active=true         READ
+
+22) db.projectdata.find({active:true}).limit(1) // to see only one document, who has active=true            READ
+
+23) db.projectdata.findOne({active:true}) // to see only first one document, who has active=true            READ
+
+24) db.projectdata.find({active:true}).limit(1).skip(1) // to see only second document with skipping first one, who has active=true        READ
+
+25) UpdateOne()=>db.COLLECTION_NAME.updateOne(<filter>, <update>) // syntax of update operation        UPDATE
+
+26) UpdateMany()=>db.COLLECTION_NAME.update(<filter>, <update>) // syntax of update many operation                  UPDATE
+
+27) db.projectdata.updateOne({ name: "javascript" }, { $set: { type: "Full stack" } }) // It's for update the data, $set{} is used to set new data              UPDATE
+
+28) db.projectdata.updateMany({ type : "Front Ens" }, { $set: { active: false } }) // It's for update morethan one data (updateMany)              UPDATE
+
+29) db.projectdata.deleteMany({type : "Front Ens"}) //          DELETE
+
+30)  .remove is deprecated.                              DELETE
+
+31) db.projectdata.deleteMany({}) //to delete whole data                        DELETE
